@@ -1,6 +1,9 @@
-[
+{
+  "notes": [
     {
-        "title":"Test Title",
-        "text":"Test text"
+      "title": "Welcome to Notely!",
+      "text": "Notely will help you keep notes! ",
+      "id": "kvpm38z25u1e9yy6lrn"
     }
-]
+  ]
+}

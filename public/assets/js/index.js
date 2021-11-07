@@ -74,7 +74,7 @@ const handleNoteSave = () => {
   let note;
   let noteId = noteTitle.getAttribute('data-id');
 
-  if (noteID) {
+  if (noteId) {
     note = {
       title: noteTitle.value,
       text: noteText.value,
@@ -86,7 +86,7 @@ const handleNoteSave = () => {
       text: noteText.value
     };
   };
-  saveNote(newNote).then(() => {
+  saveNote(note).then(() => {
     getAndRenderNotes();
     renderActiveNote();
   });
