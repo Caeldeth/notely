@@ -1,14 +1,31 @@
 {
-  "name": "note-taker",
+  "name": "notely",
   "version": "1.0.0",
-  "description": "",
+  "description": "An express.js note taking app",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Caeldeth",
+  "license": "GPL-3.0-or-later",
   "dependencies": {
     "express": "^4.16.4"
-  }
+  },
+  "devDependencies": {
+    "jest": "^25.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Caeldeth/notely.git"
+  },
+  "keywords": [
+    "notes",
+    "express",
+    "server"
+  ],
+  "bugs": {
+    "url": "https://github.com/Caeldeth/notely/issues"
+  },
+  "homepage": "https://github.com/Caeldeth/notely#readme"
 }
