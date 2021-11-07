@@ -40,6 +40,13 @@ const saveNote = (note) =>
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(note),
+  })
+  .then((response) => {
+    if (response.ok) {
+      return response.json()
+    } else {
+      alert(`Error: ${response.statusText}`);
+    }
   });
 
 const deleteNote = (id) =>
@@ -54,22 +61,30 @@ const renderActiveNote = () => {
   hide(saveNoteBtn);
 
   if (activeNote.id) {
-    noteTitle.setAttribute('readonly', true);
-    noteText.setAttribute('readonly', true);
+    noteTitle.setAttribute('data-id', activeNote.id);
     noteTitle.value = activeNote.title;
     noteText.value = activeNote.text;
   } else {
-    noteTitle.removeAttribute('readonly');
-    noteText.removeAttribute('readonly');
     noteTitle.value = '';
     noteText.value = '';
   }
 };
 
 const handleNoteSave = () => {
-  const newNote = {
-    title: noteTitle.value,
-    text: noteText.value,
+  let note;
+  let noteId = noteTitle.getAttribute('data-id');
+
+  if (noteID) {
+    note = {
+      title: noteTitle.value,
+      text: noteText.value,
+      id: noteId
+    };
+  } else {
+    note = {
+      title: noteTitle.value,
+      text: noteText.value
+    };
   };
   saveNote(newNote).then(() => {
     getAndRenderNotes();
